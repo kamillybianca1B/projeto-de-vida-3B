@@ -1,109 +1,696 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus objetivos do ano</title>
+    <title>✨ Meus Objetivos</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", Arial, sans-serif;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        body {
-            background: linear-gradient(135deg, #ffd6e8, #ffeef7, #ffcce0);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* Corações decorativos */
-        body::before,
-        body::after {
-            content: "❤ ✿ ♡ ✿ ❤";
-            position: absolute;
-            font-size: 30px;
-            color: rgba(255, 105, 180, 0.2);
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-        body::before {
-            top: 20px;
-            left: 30px;
-        }
-
-        body::after {
-            bottom: 20px;
-            right: 30px;
-        }
-
-        .conteudo-principal {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.3);
-            width: 90%;
-            max-width: 700px;
-            text-align: center;
-            border: 3px solid #ffb6d9;
-        }
-
-        .titulo-principal {
-            color: #ff4f9d;
-            font-size: 2.4rem;
-            margin-bottom: 30px;
-        }
-
-        .titulo-principal span {
-            color: #ff89c2;
-        }
-
-        .botoes {
-            display: grid;
-            gap: 18px;
-        }
-
-        .botao {
-            background: linear-gradient(135deg, #ff8fc4, #ffb6d9);
-            color: white;
-            border: none;
-            padding: 18px;
-            border-radius: 20px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 8px 15px rgba(255, 105, 180, 0.25);
-        }
-
-        .botao:hover {
-            transform: translateY(-5px) scale(1.03);
-            background: linear-gradient(135deg, #ff69b4, #ff9fcf);
-            box-shadow: 0 12px 20px rgba(255, 105, 180, 0.35);
-        }
-
-        .botao:active {
-            transform: scale(0.97);
-        }
-    </style>
 </head>
 
 <body>
-    <section class="conteudo-principal">
-        <h2 class="titulo-principal">Meus Objetivos do ano<span>_</span></h2>
 
-        <div class="botoes">
-            <button class="botao">Cursos na Alura</button>
-            <button class="botao">Criar projetos em Javascript</button>
-            <button class="botao">Criar um portfolio</button>
-            <button class="botao">Atualizar meu currículo</button>
+    <!-- Fundo Animado -->
+    <div class="background">
+        <div class="coracoes"></div>
+        <div class="particulas"></div>
+    </div>
+
+    <!-- Botão modo escuro -->
+    <button id="modoEscuro" class="modo-escuro">
+        🌙
+    </button>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
+
+            <h1>
+                ✨ Meus Objetivos
+            </h1>
+
+            <p>
+                Pequenos passos hoje,
+                grandes conquistas amanhã.
+            </p>
+
+        </header>
+
+        <!-- Informações -->
+        <section class="painel">
+
+            <div class="caixa">
+
+                <h3>🕒 Horário</h3>
+
+                <span id="relogio">
+                    00:00:00
+                </span>
+
+            </div>
+
+            <div class="caixa">
+
+                <h3>📅 Fim do Ano</h3>
+
+                <span id="contador">
+                    Carregando...
+                </span>
+
+            </div>
+
+        </section>
+
+        <!-- Objetivos -->
+
+        <section class="objetivos">
+
+            <div class="card" onclick="mostrarObjetivo('escola')">
+
+                <div class="icone">
+                    🏫
+                </div>
+
+                <h2>
+                    Escola
+                </h2>
+
+                <p>
+                    Passar de ano sem depender da recuperação.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="mostrarObjetivo('dinheiro')">
+
+                <div class="icone">
+                    💰
+                </div>
+
+                <h2>
+                    Dinheiro
+                </h2>
+
+                <p>
+                    Economizar para comprar minha moto.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="mostrarObjetivo('estudos')">
+
+                <div class="icone">
+                    📚
+                </div>
+
+                <h2>
+                    Estudos
+                </h2>
+
+                <p>
+                    Passar no ENEM e entrar na faculdade.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="mostrarObjetivo('curriculo')">
+
+                <div class="icone">
+                    📄
+                </div>
+
+                <h2>
+                    Currículo
+                </h2>
+
+                <p>
+                    Conseguir uma ótima oportunidade.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Barra de progresso -->
+
+        <section class="progresso">
+
+            <h2>
+                📊 Meu Progresso
+            </h2>
+
+            <div class="progresso-item">
+
+                <label>
+                    Escola
+                </label>
+
+                <div class="barra">
+
+                    <div class="valor" id="barraEscola"></div>
+
+                </div>
+
+            </div>
+
+            <div class="progresso-item">
+
+                <label>
+                    Dinheiro
+                </label>
+
+                <div class="barra">
+
+                    <div class="valor" id="barraDinheiro"></div>
+
+                </div>
+
+            </div>
+
+            <div class="progresso-item">
+
+                <label>
+                    Estudos
+                </label>
+
+                <div class="barra">
+
+                    <div class="valor" id="barraEstudos"></div>
+
+                </div>
+
+            </div>
+
+            <div class="progresso-item">
+
+                <label>
+                    Currículo
+                </label>
+
+                <div class="barra">
+
+                    <div class="valor" id="barraCurriculo"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Conquistas -->
+
+        <section class="conquistas">
+
+            <h2>
+                🏆 Minhas Conquistas
+            </h2>
+
+            <div class="lista-conquistas">
+
+                <div class="conquista">
+
+                    ⭐
+
+                    <span>
+                        Passar de Ano
+                    </span>
+
+                </div>
+
+                <div class="conquista">
+
+                    🏍️
+
+                    <span>
+                        Comprar Minha Moto
+                    </span>
+
+                </div>
+
+                <div class="conquista">
+
+                    🎓
+
+                    <span>
+                        Faculdade
+                    </span>
+
+                </div>
+
+                <div class="conquista">
+
+                    💼
+
+                    <span>
+                        Primeiro Emprego
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+                <!-- Modal dos Objetivos -->
+
+        <div class="modal" id="modal">
+
+            <div class="modal-conteudo">
+
+                <button class="fechar" onclick="fecharModal()">
+                    ✖
+                </button>
+
+                <div class="modal-icone" id="modalIcone">
+                    💖
+                </div>
+
+                <h2 id="modalTitulo">
+                    Objetivo
+                </h2>
+
+                <p id="modalTexto">
+                    Clique em um objetivo para descobrir mais.
+                </p>
+
+                <div class="motivacao">
+
+                    <h3>
+                        🌟 Motivação
+                    </h3>
+
+                    <p id="fraseMotivacao">
+
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
-    </section>
+
+        <!-- Estatísticas -->
+
+        <section class="estatisticas">
+
+            <h2>
+                📈 Estatísticas
+            </h2>
+
+            <div class="estatisticas-grid">
+
+                <div class="estatistica">
+
+                    <span id="objetivosTotal">
+                        4
+                    </span>
+
+                    <p>
+                        Objetivos
+                    </p>
+
+                </div>
+
+                <div class="estatistica">
+
+                    <span id="objetivosConcluidos">
+                        0
+                    </span>
+
+                    <p>
+                        Concluídos
+                    </p>
+
+                </div>
+
+                <div class="estatistica">
+
+                    <span id="porcentagem">
+                        0%
+                    </span>
+
+                    <p>
+                        Progresso
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Botões -->
+
+        <section class="acoes">
+
+            <button class="btn" onclick="animarBarras()">
+
+                🚀 Atualizar Progresso
+
+            </button>
+
+            <button class="btn" onclick="mostrarConfetes()">
+
+                🎉 Comemorar
+
+            </button>
+
+        </section>
+
+        <!-- Área de Confetes -->
+
+        <div id="confetes"></div>
+
+        <!-- Rodapé -->
+
+        <footer>
+
+            <h3>
+                ❤️ Nunca desista dos seus sonhos.
+            </h3>
+
+            <p>
+
+                Cada pequena conquista de hoje
+                aproxima você da vida que deseja amanhã.
+
+            </p>
+
+        </footer>
+
+    </main>
+
+    <script>
+
+    const objetivos = {
+
+        escola:{
+
+            icone:"🏫",
+
+            titulo:"Escola",
+
+            texto:"Meu objetivo é passar de ano sem recuperação.",
+
+            frase:"📚 Se a preguiça aparecer, manda ela estudar também! 😂"
+
+        },
+
+        dinheiro:{
+
+            icone:"💰",
+
+            titulo:"Dinheiro",
+
+            texto:"Quero juntar dinheiro para comprar minha moto.",
+
+            frase:"🏍️ Toda economia de hoje é um passo mais perto da moto."
+
+        },
+
+        estudos:{
+
+            icone:"📚",
+
+            titulo:"Estudos",
+
+            texto:"Quero passar no ENEM e entrar na faculdade.",
+
+            frase:"🎓 O esforço de hoje será o orgulho de amanhã."
+
+        },
+
+        curriculo:{
+
+            icone:"📄",
+
+            titulo:"Currículo",
+
+            texto:"Quero conquistar um excelente emprego.",
+
+            frase:"💼 Toda oportunidade começa com preparação."
+
+        }
+
+    };
+
+    function mostrarObjetivo(tipo){
+
+        document.getElementById("modal").style.display="flex";
+
+        document.getElementById("modalIcone").innerHTML=objetivos[tipo].icone;
+
+        document.getElementById("modalTitulo").innerHTML=objetivos[tipo].titulo;
+
+        document.getElementById("modalTexto").innerHTML=objetivos[tipo].texto;
+
+        document.getElementById("fraseMotivacao").innerHTML=objetivos[tipo].frase;
+
+    }
+
+    function fecharModal(){
+
+        document.getElementById("modal").style.display="none";
+
+    }
+
+    window.onclick=function(event){
+
+        const modal=document.getElementById("modal");
+
+        if(event.target==modal){
+
+            modal.style.display="none";
+
+        }
+
+    }
+
+    function atualizarRelogio(){
+
+        const agora=new Date();
+
+        document.getElementById("relogio").innerHTML=
+
+        agora.toLocaleTimeString("pt-BR");
+
+    }
+
+    setInterval(atualizarRelogio,1000);
+
+    atualizarRelogio();
+
+    function contadorAno(){
+
+        const hoje=new Date();
+
+        const fim=new Date(hoje.getFullYear(),11,31);
+
+        const dias=Math.ceil((fim-hoje)/(1000*60*60*24));
+
+        document.getElementById("contador").innerHTML=
+
+        dias+" dias restantes";
+
+    }
+
+    contadorAno();
+
+    function animarBarras(){
+
+        document.getElementById("barraEscola").style.width="85%";
+
+        document.getElementById("barraDinheiro").style.width="40%";
+
+        document.getElementById("barraEstudos").style.width="75%";
+
+        document.getElementById("barraCurriculo").style.width="55%";
+
+        document.getElementById("porcentagem").innerHTML="64%";
+
+    }
+
+    animarBarras();
+                // ============================
+        // MODO ESCURO
+        // ============================
+
+        const botaoModo = document.getElementById("modoEscuro");
+
+        botaoModo.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+
+                botaoModo.innerHTML = "☀️";
+
+            } else {
+
+                botaoModo.innerHTML = "🌙";
+
+            }
+
+        });
+
+        // ============================
+        // CONFETES
+        // ============================
+
+        function mostrarConfetes() {
+
+            const area = document.getElementById("confetes");
+
+            for (let i = 0; i < 120; i++) {
+
+                const confete = document.createElement("div");
+
+                confete.className = "confete";
+
+                confete.style.left = Math.random() * 100 + "vw";
+
+                confete.style.top = "-20px";
+
+                confete.style.backgroundColor =
+                    `hsl(${Math.random() * 360},100%,65%)`;
+
+                confete.style.animationDuration =
+                    (Math.random() * 3 + 2) + "s";
+
+                confete.style.transform =
+                    `rotate(${Math.random() * 360}deg)`;
+
+                area.appendChild(confete);
+
+                setTimeout(() => {
+
+                    confete.remove();
+
+                }, 5000);
+
+            }
+
+        }
+
+        // ============================
+        // CORAÇÕES
+        // ============================
+
+        const coracoes = document.querySelector(".coracoes");
+
+        function criarCoracao() {
+
+            const coracao = document.createElement("span");
+
+            coracao.innerHTML = "❤";
+
+            coracao.classList.add("coracao");
+
+            coracao.style.left = Math.random() * 100 + "%";
+
+            coracao.style.fontSize =
+                (Math.random() * 20 + 15) + "px";
+
+            coracao.style.animationDuration =
+                (Math.random() * 6 + 6) + "s";
+
+            coracoes.appendChild(coracao);
+
+            setTimeout(() => {
+
+                coracao.remove();
+
+            }, 12000);
+
+        }
+
+        setInterval(criarCoracao, 500);
+
+        // ============================
+        // PARTÍCULAS
+        // ============================
+
+        const particulas = document.querySelector(".particulas");
+
+        function criarParticula() {
+
+            const p = document.createElement("span");
+
+            p.classList.add("particula");
+
+            p.style.left = Math.random() * 100 + "%";
+
+            p.style.width =
+                (Math.random() * 6 + 4) + "px";
+
+            p.style.height = p.style.width;
+
+            p.style.animationDuration =
+                (Math.random() * 10 + 10) + "s";
+
+            particulas.appendChild(p);
+
+            setTimeout(() => {
+
+                p.remove();
+
+            }, 20000);
+
+        }
+
+        setInterval(criarParticula, 250);
+
+        // ============================
+        // ANIMAÇÃO DOS CARDS
+        // ============================
+
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach((card, indice) => {
+
+            card.style.animation =
+                "entrada .8s ease forwards";
+
+            card.style.animationDelay =
+                (indice * 0.15) + "s";
+
+        });
+
+        // ============================
+        // SAUDAÇÃO
+        // ============================
+
+        const hora = new Date().getHours();
+
+        let saudacao = "";
+
+        if (hora < 12) {
+
+            saudacao = "🌞 Bom dia! Vamos conquistar seus objetivos!";
+
+        } else if (hora < 18) {
+
+            saudacao = "☀️ Boa tarde! Continue firme!";
+
+        } else {
+
+            saudacao = "🌙 Boa noite! Amanhã é mais um passo rumo aos seus sonhos!";
+
+        }
+
+        console.log(saudacao);
+
+    </script>
+
 </body>
 
 </html>
