@@ -2,13 +2,17 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>✨ Meus Objetivos</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -18,53 +22,81 @@
 
 <body>
 
-    <!-- Fundo Animado -->
+    <!-- Fundo -->
+
     <div class="background">
-        <div class="coracoes"></div>
-        <div class="particulas"></div>
+
+        <div class="gradient"></div>
+
+        <div class="hearts"></div>
+
+        <div class="particles"></div>
+
     </div>
 
     <!-- Botão modo escuro -->
-    <button id="modoEscuro" class="modo-escuro">
+
+    <button id="darkModeBtn" class="dark-mode-btn">
+
         🌙
+
     </button>
 
-    <!-- Conteúdo Principal -->
+    <!-- Conteúdo -->
+
     <main class="container">
 
         <!-- Cabeçalho -->
-        <header class="cabecalho">
+
+        <header class="header">
 
             <h1>
+
                 ✨ Meus Objetivos
+
             </h1>
 
             <p>
-                Pequenos passos hoje,
-                grandes conquistas amanhã.
+
+                Pequenos passos hoje.
+                Grandes conquistas amanhã.
+
             </p>
 
         </header>
 
-        <!-- Informações -->
-        <section class="painel">
+        <!-- Painel -->
 
-            <div class="caixa">
+        <section class="dashboard">
 
-                <h3>🕒 Horário</h3>
+            <div class="info-card">
 
-                <span id="relogio">
+                <h3>
+
+                    🕒 Horário
+
+                </h3>
+
+                <span id="clock">
+
                     00:00:00
+
                 </span>
 
             </div>
 
-            <div class="caixa">
+            <div class="info-card">
 
-                <h3>📅 Fim do Ano</h3>
+                <h3>
 
-                <span id="contador">
+                    📅 Dias restantes
+
+                </h3>
+
+                <span id="countdown">
+
                     Carregando...
+
                 </span>
 
             </div>
@@ -73,317 +105,373 @@
 
         <!-- Objetivos -->
 
-        <section class="objetivos">
+        <section class="goals">
 
-            <div class="card" onclick="mostrarObjetivo('escola')">
+            <div class="goal-card"
 
-                <div class="icone">
+                onclick="openGoal('school')">
+
+                <div class="goal-icon">
+
                     🏫
+
                 </div>
 
                 <h2>
+
                     Escola
+
                 </h2>
 
                 <p>
-                    Passar de ano sem depender da recuperação.
+
+                    Passar de ano.
+
                 </p>
 
             </div>
 
-            <div class="card" onclick="mostrarObjetivo('dinheiro')">
+            <div class="goal-card"
 
-                <div class="icone">
+                onclick="openGoal('money')">
+
+                <div class="goal-icon">
+
                     💰
+
                 </div>
 
                 <h2>
+
                     Dinheiro
+
                 </h2>
 
                 <p>
-                    Economizar para comprar minha moto.
+
+                    Comprar minha moto.
+
                 </p>
 
             </div>
 
-            <div class="card" onclick="mostrarObjetivo('estudos')">
+            <div class="goal-card"
 
-                <div class="icone">
+                onclick="openGoal('study')">
+
+                <div class="goal-icon">
+
                     📚
+
                 </div>
 
                 <h2>
+
                     Estudos
+
                 </h2>
 
                 <p>
-                    Passar no ENEM e entrar na faculdade.
+
+                    ENEM e Faculdade.
+
                 </p>
 
             </div>
 
-            <div class="card" onclick="mostrarObjetivo('curriculo')">
+            <div class="goal-card"
 
-                <div class="icone">
-                    📄
-                </div>
+                onclick="openGoal('future')">
 
-                <h2>
-                    Currículo
-                </h2>
-
-                <p>
-                    Conseguir uma ótima oportunidade.
-                </p>
-
-            </div>
-
-        </section>
-
-        <!-- Barra de progresso -->
-
-        <section class="progresso">
-
-            <h2>
-                📊 Meu Progresso
-            </h2>
-
-            <div class="progresso-item">
-
-                <label>
-                    Escola
-                </label>
-
-                <div class="barra">
-
-                    <div class="valor" id="barraEscola"></div>
-
-                </div>
-
-            </div>
-
-            <div class="progresso-item">
-
-                <label>
-                    Dinheiro
-                </label>
-
-                <div class="barra">
-
-                    <div class="valor" id="barraDinheiro"></div>
-
-                </div>
-
-            </div>
-
-            <div class="progresso-item">
-
-                <label>
-                    Estudos
-                </label>
-
-                <div class="barra">
-
-                    <div class="valor" id="barraEstudos"></div>
-
-                </div>
-
-            </div>
-
-            <div class="progresso-item">
-
-                <label>
-                    Currículo
-                </label>
-
-                <div class="barra">
-
-                    <div class="valor" id="barraCurriculo"></div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Conquistas -->
-
-        <section class="conquistas">
-
-            <h2>
-                🏆 Minhas Conquistas
-            </h2>
-
-            <div class="lista-conquistas">
-
-                <div class="conquista">
-
-                    ⭐
-
-                    <span>
-                        Passar de Ano
-                    </span>
-
-                </div>
-
-                <div class="conquista">
-
-                    🏍️
-
-                    <span>
-                        Comprar Minha Moto
-                    </span>
-
-                </div>
-
-                <div class="conquista">
-
-                    🎓
-
-                    <span>
-                        Faculdade
-                    </span>
-
-                </div>
-
-                <div class="conquista">
+                <div class="goal-icon">
 
                     💼
 
-                    <span>
-                        Primeiro Emprego
-                    </span>
+                </div>
+
+                <h2>
+
+                    Futuro
+
+                </h2>
+
+                <p>
+
+                    Meu primeiro emprego.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Progresso -->
+
+        <section class="progress-section">
+
+            <h2>
+
+                📊 Meu Progresso
+
+            </h2>
+
+            <div class="progress-item">
+
+                <label>
+
+                    Escola
+
+                </label>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+
+                        id="progressSchool">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="progress-item">
+
+                <label>
+
+                    Dinheiro
+
+                </label>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+
+                        id="progressMoney">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="progress-item">
+
+                <label>
+
+                    Estudos
+
+                </label>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+
+                        id="progressStudy">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="progress-item">
+
+                <label>
+
+                    Futuro
+
+                </label>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+
+                        id="progressFuture">
+
+                    </div>
 
                 </div>
 
             </div>
 
         </section>
-                <!-- Modal dos Objetivos -->
+                <!-- ===========================
+             CONQUISTAS
+        ============================ -->
 
-        <div class="modal" id="modal">
+        <section class="achievements">
 
-            <div class="modal-conteudo">
+            <h2>🏆 Minhas Conquistas</h2>
 
-                <button class="fechar" onclick="fecharModal()">
-                    ✖
-                </button>
+            <div class="achievement-grid">
 
-                <div class="modal-icone" id="modalIcone">
-                    💖
+                <div class="achievement-card">
+                    ⭐
+                    <h3>Passar de Ano</h3>
+                    <p>Concluir o ensino médio com sucesso.</p>
                 </div>
 
-                <h2 id="modalTitulo">
-                    Objetivo
-                </h2>
+                <div class="achievement-card">
+                    🏍️
+                    <h3>Minha Moto</h3>
+                    <p>Juntar dinheiro para comprar minha moto.</p>
+                </div>
 
-                <p id="modalTexto">
-                    Clique em um objetivo para descobrir mais.
+                <div class="achievement-card">
+                    🎓
+                    <h3>Faculdade</h3>
+                    <p>Entrar na faculdade através do ENEM.</p>
+                </div>
+
+                <div class="achievement-card">
+                    💼
+                    <h3>Emprego</h3>
+                    <p>Conseguir uma excelente oportunidade.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+             ESTATÍSTICAS
+        ============================ -->
+
+        <section class="stats">
+
+            <div class="stat-box">
+
+                <h3 id="completedGoals">
+                    0
+                </h3>
+
+                <p>
+                    Objetivos Concluídos
                 </p>
 
-                <div class="motivacao">
+            </div>
+
+            <div class="stat-box">
+
+                <h3>
+                    4
+                </h3>
+
+                <p>
+                    Objetivos Totais
+                </p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3 id="progressPercent">
+                    0%
+                </h3>
+
+                <p>
+                    Progresso Geral
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+             MODAL
+        ============================ -->
+
+        <div class="modal" id="goalModal">
+
+            <div class="modal-content">
+
+                <button
+                    class="close-btn"
+                    onclick="closeGoal()">
+
+                    ✖
+
+                </button>
+
+                <div
+                    class="modal-icon"
+                    id="modalIcon">
+
+                    💖
+
+                </div>
+
+                <h2 id="modalTitle">
+
+                    Objetivo
+
+                </h2>
+
+                <p id="modalDescription">
+
+                    ...
+
+                </p>
+
+                <div class="motivation">
 
                     <h3>
-                        🌟 Motivação
+
+                        🌸 Motivação
+
                     </h3>
 
-                    <p id="fraseMotivacao">
+                    <p id="modalPhrase">
 
                     </p>
 
                 </div>
+
+                <button
+                    class="complete-btn"
+                    id="completeButton">
+
+                    ✔ Marcar como concluído
+
+                </button>
 
             </div>
 
         </div>
 
-        <!-- Estatísticas -->
+        <!-- ===========================
+             CONFETES
+        ============================ -->
 
-        <section class="estatisticas">
+        <div id="confettiContainer">
 
-            <h2>
-                📈 Estatísticas
-            </h2>
+        </div>
 
-            <div class="estatisticas-grid">
-
-                <div class="estatistica">
-
-                    <span id="objetivosTotal">
-                        4
-                    </span>
-
-                    <p>
-                        Objetivos
-                    </p>
-
-                </div>
-
-                <div class="estatistica">
-
-                    <span id="objetivosConcluidos">
-                        0
-                    </span>
-
-                    <p>
-                        Concluídos
-                    </p>
-
-                </div>
-
-                <div class="estatistica">
-
-                    <span id="porcentagem">
-                        0%
-                    </span>
-
-                    <p>
-                        Progresso
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Botões -->
-
-        <section class="acoes">
-
-            <button class="btn" onclick="animarBarras()">
-
-                🚀 Atualizar Progresso
-
-            </button>
-
-            <button class="btn" onclick="mostrarConfetes()">
-
-                🎉 Comemorar
-
-            </button>
-
-        </section>
-
-        <!-- Área de Confetes -->
-
-        <div id="confetes"></div>
-
-        <!-- Rodapé -->
+        <!-- ===========================
+             RODAPÉ
+        ============================ -->
 
         <footer>
 
             <h3>
-                ❤️ Nunca desista dos seus sonhos.
+
+                ✨ Nunca desista dos seus sonhos.
+
             </h3>
 
             <p>
 
-                Cada pequena conquista de hoje
+                Cada pequeno passo dado hoje
                 aproxima você da vida que deseja amanhã.
 
             </p>
+
+            <span>
+
+                Desenvolvido com ❤️ por Kamilly Bianca
+
+            </span>
 
         </footer>
 
@@ -391,303 +479,305 @@
 
     <script>
 
-    const objetivos = {
+        /* ===========================
+           DADOS DOS OBJETIVOS
+        =========================== */
 
-        escola:{
+        const goalData = {
 
-            icone:"🏫",
+            school:{
 
-            titulo:"Escola",
+                icon:"🏫",
 
-            texto:"Meu objetivo é passar de ano sem recuperação.",
+                title:"Escola",
 
-            frase:"📚 Se a preguiça aparecer, manda ela estudar também! 😂"
+                description:"Meu objetivo é passar de ano com boas notas e sem recuperação.",
 
-        },
+                phrase:"😂 A recuperação nem vai saber que eu existo!",
 
-        dinheiro:{
+                progress:85
 
-            icone:"💰",
+            },
 
-            titulo:"Dinheiro",
+            money:{
 
-            texto:"Quero juntar dinheiro para comprar minha moto.",
+                icon:"💰",
 
-            frase:"🏍️ Toda economia de hoje é um passo mais perto da moto."
+                title:"Dinheiro",
 
-        },
+                description:"Juntar dinheiro para comprar minha moto.",
 
-        estudos:{
+                phrase:"🏍️ Toda economia de hoje é um quilômetro a mais amanhã.",
 
-            icone:"📚",
+                progress:40
 
-            titulo:"Estudos",
+            },
 
-            texto:"Quero passar no ENEM e entrar na faculdade.",
+            study:{
 
-            frase:"🎓 O esforço de hoje será o orgulho de amanhã."
+                icon:"📚",
 
-        },
+                title:"Estudos",
 
-        curriculo:{
+                description:"Passar no ENEM e conquistar minha vaga na faculdade.",
 
-            icone:"📄",
+                phrase:"🎓 O esforço de hoje será o orgulho de amanhã.",
 
-            titulo:"Currículo",
+                progress:75
 
-            texto:"Quero conquistar um excelente emprego.",
+            },
 
-            frase:"💼 Toda oportunidade começa com preparação."
+            future:{
+
+                icon:"💼",
+
+                title:"Futuro",
+
+                description:"Conseguir meu primeiro emprego e crescer profissionalmente.",
+
+                phrase:"🚀 Grandes oportunidades começam com pequenos passos.",
+
+                progress:60
+
+            }
+
+        };
+
+        let completed = 0;
+                /* ===========================
+           ABRIR MODAL
+        =========================== */
+
+        function openGoal(goal){
+
+            const data = goalData[goal];
+
+            document.getElementById("modalIcon").textContent = data.icon;
+            document.getElementById("modalTitle").textContent = data.title;
+            document.getElementById("modalDescription").textContent = data.description;
+            document.getElementById("modalPhrase").textContent = data.phrase;
+
+            document.getElementById("goalModal").style.display = "flex";
+
+            document.getElementById("completeButton").onclick = function(){
+
+                completed++;
+
+                if(completed > 4){
+                    completed = 4;
+                }
+
+                document.getElementById("completedGoals").textContent = completed;
+
+                document.getElementById("progressPercent").textContent =
+                Math.round((completed/4)*100) + "%";
+
+                animateProgress();
+                createConfetti();
+                closeGoal();
+
+            };
 
         }
 
-    };
+        /* ===========================
+           FECHAR MODAL
+        =========================== */
 
-    function mostrarObjetivo(tipo){
+        function closeGoal(){
 
-        document.getElementById("modal").style.display="flex";
-
-        document.getElementById("modalIcone").innerHTML=objetivos[tipo].icone;
-
-        document.getElementById("modalTitulo").innerHTML=objetivos[tipo].titulo;
-
-        document.getElementById("modalTexto").innerHTML=objetivos[tipo].texto;
-
-        document.getElementById("fraseMotivacao").innerHTML=objetivos[tipo].frase;
-
-    }
-
-    function fecharModal(){
-
-        document.getElementById("modal").style.display="none";
-
-    }
-
-    window.onclick=function(event){
-
-        const modal=document.getElementById("modal");
-
-        if(event.target==modal){
-
-            modal.style.display="none";
+            document.getElementById("goalModal").style.display="none";
 
         }
 
-    }
+        window.onclick=function(event){
 
-    function atualizarRelogio(){
+            const modal=document.getElementById("goalModal");
 
-        const agora=new Date();
+            if(event.target===modal){
 
-        document.getElementById("relogio").innerHTML=
+                closeGoal();
 
-        agora.toLocaleTimeString("pt-BR");
+            }
 
-    }
+        }
 
-    setInterval(atualizarRelogio,1000);
+        /* ===========================
+           RELÓGIO
+        =========================== */
 
-    atualizarRelogio();
+        function updateClock(){
 
-    function contadorAno(){
+            const now = new Date();
 
-        const hoje=new Date();
+            document.getElementById("clock").textContent =
+            now.toLocaleTimeString("pt-BR");
 
-        const fim=new Date(hoje.getFullYear(),11,31);
+        }
 
-        const dias=Math.ceil((fim-hoje)/(1000*60*60*24));
+        setInterval(updateClock,1000);
 
-        document.getElementById("contador").innerHTML=
+        updateClock();
 
-        dias+" dias restantes";
+        /* ===========================
+           CONTAGEM REGRESSIVA
+        =========================== */
 
-    }
+        function updateCountdown(){
 
-    contadorAno();
+            const today=new Date();
 
-    function animarBarras(){
+            const end=new Date(today.getFullYear(),11,31);
 
-        document.getElementById("barraEscola").style.width="85%";
+            const diff=end-today;
 
-        document.getElementById("barraDinheiro").style.width="40%";
+            const days=Math.ceil(diff/(1000*60*60*24));
 
-        document.getElementById("barraEstudos").style.width="75%";
+            document.getElementById("countdown").textContent=
+            days+" dias";
 
-        document.getElementById("barraCurriculo").style.width="55%";
+        }
 
-        document.getElementById("porcentagem").innerHTML="64%";
+        updateCountdown();
 
-    }
+        /* ===========================
+           BARRAS
+        =========================== */
 
-    animarBarras();
-                // ============================
-        // MODO ESCURO
-        // ============================
+        function animateProgress(){
 
-        const botaoModo = document.getElementById("modoEscuro");
+            document.getElementById("progressSchool").style.width=
+            goalData.school.progress+"%";
 
-        botaoModo.addEventListener("click", () => {
+            document.getElementById("progressMoney").style.width=
+            goalData.money.progress+"%";
+
+            document.getElementById("progressStudy").style.width=
+            goalData.study.progress+"%";
+
+            document.getElementById("progressFuture").style.width=
+            goalData.future.progress+"%";
+
+        }
+
+        animateProgress();
+
+        /* ===========================
+           MODO ESCURO
+        =========================== */
+
+        const darkButton=document.getElementById("darkModeBtn");
+
+        darkButton.addEventListener("click",()=>{
 
             document.body.classList.toggle("dark");
 
-            if (document.body.classList.contains("dark")) {
-
-                botaoModo.innerHTML = "☀️";
-
-            } else {
-
-                botaoModo.innerHTML = "🌙";
-
-            }
+            darkButton.textContent=
+            document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙";
 
         });
 
-        // ============================
-        // CONFETES
-        // ============================
+        /* ===========================
+           CONFETES
+        =========================== */
 
-        function mostrarConfetes() {
+        function createConfetti(){
 
-            const area = document.getElementById("confetes");
+            const container=document.getElementById("confettiContainer");
 
-            for (let i = 0; i < 120; i++) {
+            for(let i=0;i<120;i++){
 
-                const confete = document.createElement("div");
+                const confetti=document.createElement("div");
 
-                confete.className = "confete";
+                confetti.className="confetti";
 
-                confete.style.left = Math.random() * 100 + "vw";
+                confetti.style.left=Math.random()*100+"vw";
 
-                confete.style.top = "-20px";
+                confetti.style.background=
+                `hsl(${Math.random()*360},100%,65%)`;
 
-                confete.style.backgroundColor =
-                    `hsl(${Math.random() * 360},100%,65%)`;
+                confetti.style.animationDuration=
+                (Math.random()*3+2)+"s";
 
-                confete.style.animationDuration =
-                    (Math.random() * 3 + 2) + "s";
+                container.appendChild(confetti);
 
-                confete.style.transform =
-                    `rotate(${Math.random() * 360}deg)`;
+                setTimeout(()=>{
 
-                area.appendChild(confete);
+                    confetti.remove();
 
-                setTimeout(() => {
-
-                    confete.remove();
-
-                }, 5000);
+                },5000);
 
             }
 
         }
 
-        // ============================
-        // CORAÇÕES
-        // ============================
+        /* ===========================
+           CORAÇÕES
+        =========================== */
 
-        const coracoes = document.querySelector(".coracoes");
+        function createHeart(){
 
-        function criarCoracao() {
+            const heart=document.createElement("span");
 
-            const coracao = document.createElement("span");
+            heart.className="heart";
 
-            coracao.innerHTML = "❤";
+            heart.innerHTML="❤";
 
-            coracao.classList.add("coracao");
+            heart.style.left=Math.random()*100+"vw";
 
-            coracao.style.left = Math.random() * 100 + "%";
+            heart.style.fontSize=
+            (Math.random()*20+15)+"px";
 
-            coracao.style.fontSize =
-                (Math.random() * 20 + 15) + "px";
+            heart.style.animationDuration=
+            (Math.random()*5+6)+"s";
 
-            coracao.style.animationDuration =
-                (Math.random() * 6 + 6) + "s";
+            document.querySelector(".hearts")
+            .appendChild(heart);
 
-            coracoes.appendChild(coracao);
+            setTimeout(()=>{
 
-            setTimeout(() => {
+                heart.remove();
 
-                coracao.remove();
-
-            }, 12000);
-
-        }
-
-        setInterval(criarCoracao, 500);
-
-        // ============================
-        // PARTÍCULAS
-        // ============================
-
-        const particulas = document.querySelector(".particulas");
-
-        function criarParticula() {
-
-            const p = document.createElement("span");
-
-            p.classList.add("particula");
-
-            p.style.left = Math.random() * 100 + "%";
-
-            p.style.width =
-                (Math.random() * 6 + 4) + "px";
-
-            p.style.height = p.style.width;
-
-            p.style.animationDuration =
-                (Math.random() * 10 + 10) + "s";
-
-            particulas.appendChild(p);
-
-            setTimeout(() => {
-
-                p.remove();
-
-            }, 20000);
+            },12000);
 
         }
 
-        setInterval(criarParticula, 250);
+        setInterval(createHeart,600);
 
-        // ============================
-        // ANIMAÇÃO DOS CARDS
-        // ============================
+        /* ===========================
+           PARTÍCULAS
+        =========================== */
 
-        const cards = document.querySelectorAll(".card");
+        function createParticle(){
 
-        cards.forEach((card, indice) => {
+            const particle=document.createElement("span");
 
-            card.style.animation =
-                "entrada .8s ease forwards";
+            particle.className="particle";
 
-            card.style.animationDelay =
-                (indice * 0.15) + "s";
+            particle.style.left=Math.random()*100+"vw";
 
-        });
+            const size=Math.random()*6+4;
 
-        // ============================
-        // SAUDAÇÃO
-        // ============================
+            particle.style.width=size+"px";
+            particle.style.height=size+"px";
 
-        const hora = new Date().getHours();
+            particle.style.animationDuration=
+            (Math.random()*10+8)+"s";
 
-        let saudacao = "";
+            document.querySelector(".particles")
+            .appendChild(particle);
 
-        if (hora < 12) {
+            setTimeout(()=>{
 
-            saudacao = "🌞 Bom dia! Vamos conquistar seus objetivos!";
+                particle.remove();
 
-        } else if (hora < 18) {
-
-            saudacao = "☀️ Boa tarde! Continue firme!";
-
-        } else {
-
-            saudacao = "🌙 Boa noite! Amanhã é mais um passo rumo aos seus sonhos!";
+            },15000);
 
         }
 
-        console.log(saudacao);
+        setInterval(createParticle,300);
 
     </script>
 
