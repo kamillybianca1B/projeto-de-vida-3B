@@ -6,59 +6,57 @@
 }
 
 body {
-    background: linear-gradient(135deg, #ffd6e8, #ffe4f2, #ffcce3);
+    background: linear-gradient(135deg, #ffd6e8, #ffeef7, #ffcce0);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
-    position: relative;
 }
 
-/* Decoração */
-body::before {
-    content: "🌸 💖 ✨ 🌷 💕";
+/* Corações decorativos */
+body::before,
+body::after {
+    content: "❤ ✿ ♡ ✿ ❤";
     position: absolute;
-    top: 20px;
-    left: 20px;
     font-size: 30px;
-    opacity: 0.5;
+    color: rgba(255, 105, 180, 0.2);
+}
+
+body::before {
+    top: 20px;
+    left: 30px;
 }
 
 body::after {
-    content: "💕 🌷 ✨ 💖 🌸";
-    position: absolute;
     bottom: 20px;
-    right: 20px;
-    font-size: 30px;
-    opacity: 0.5;
+    right: 30px;
 }
 
 .conteudo-principal {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.3);
     width: 90%;
     max-width: 700px;
     text-align: center;
     border: 3px solid #ffb6d9;
-    box-shadow: 0 12px 30px rgba(255, 105, 180, 0.3);
 }
 
 .titulo-principal {
     color: #ff4f9d;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     margin-bottom: 30px;
 }
 
 .titulo-principal span {
-    color: #ff8ac2;
+    color: #ff89c2;
 }
 
 .botoes {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 18px;
 }
 
@@ -67,17 +65,17 @@ body::after {
     color: white;
     border: none;
     padding: 18px;
-    font-size: 1.1rem;
     border-radius: 20px;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 8px 15px rgba(255, 105, 180, 0.3);
+    box-shadow: 0 8px 15px rgba(255, 105, 180, 0.25);
 }
 
 .botao:hover {
+    transform: translateY(-5px) scale(1.03);
     background: linear-gradient(135deg, #ff69b4, #ff9fcf);
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 20px rgba(255, 105, 180, 0.4);
+    box-shadow: 0 12px 20px rgba(255, 105, 180, 0.35);
 }
 
 .botao:active {
